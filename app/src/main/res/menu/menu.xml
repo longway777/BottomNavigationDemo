@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@drawable/ic_looks_one_black_24dp"
+        android:title="旋转" />
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/ic_looks_two_black_24dp"
+        android:title="缩放" />
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@drawable/ic_looks_3_black_24dp"
+        android:title="移动" />
+</menu>
