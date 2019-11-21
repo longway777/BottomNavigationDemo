@@ -1,20 +1,16 @@
 package com.example.bottomnavigationdemo;
 
-import androidx.lifecycle.ViewModelProviders;
-
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 public class SecondFragment extends Fragment {
 
@@ -36,7 +32,7 @@ public class SecondFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(SecondViewModel.class);
+        mViewModel = ViewModelProviders.of(requireActivity()).get(SecondViewModel.class);
         imageView.setScaleX(mViewModel.scaleFactor);
         imageView.setScaleY(mViewModel.scaleFactor);
         // TODO: Use the ViewModel

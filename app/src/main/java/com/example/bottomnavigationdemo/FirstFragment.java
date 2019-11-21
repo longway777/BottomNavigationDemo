@@ -1,27 +1,27 @@
 package com.example.bottomnavigationdemo;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class FirstFragment extends Fragment {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
+
+public class FirstFragment extends Fragment {
+    private static final String TAG = "hello";
     private FirstViewModel mViewModel;
     private ImageView imageView;
 
     public static FirstFragment newInstance() {
         return new FirstFragment();
     }
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -34,7 +34,8 @@ public class FirstFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(FirstViewModel.class);
+
+        mViewModel = ViewModelProviders.of(requireActivity()).get(FirstViewModel.class);
         imageView.setRotation(mViewModel.rotationPosition);
         final ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(imageView, "rotation", 0, 0);
         objectAnimator.setDuration(500);
